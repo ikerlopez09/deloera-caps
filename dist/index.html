@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DELOERA CAPS</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <h1>🧢 DELOERA CAPS</h1>
+    
+
+    <input
+        type="text"
+        id="buscador"
+        placeholder="🔍 Buscar gorra o código..."
+        onkeyup="buscarGorra()">
+
+</header>
+
+<main>
+
+<section>
+
+<h2 class="titulo">Catálogo</h2>
+
+<div id="catalogo" class="catalogo">
+
+<!-- Las gorras aparecerán aquí automáticamente -->
+
+</div>
+
+</section>
+
+<section class="carrito">
+
+<h2>🛒 Carrito (<span id="contador">0</span>)</h2>
+
+<div id="lista"></div>
+
+<h3>Total: $<span id="total">0</span> MXN</h3>
+
+<button class="btn-whatsapp" onclick="whatsapp()">
+📲 Enviar pedido por WhatsApp
+</button>
+
+</section>
+
+</main>
+
+<footer>
+
+<p>© 2026 DELOERA CAPS | Todos los derechos reservados.</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
