@@ -1,0 +1,109 @@
+console.log("Bienvenido a DE LOERA STORE");
+
+let carrito = [];
+
+function agregar(nombre, precio) {
+
+  carrito.push({
+    nombre: nombre,
+    precio: precio
+  });
+
+  mostrarCarrito();
+}
+
+
+function mostrarCarrito() {
+
+  let lista = document.getElementById("carrito");
+  lista.innerHTML = "";
+
+  let total = 0;
+
+
+  carrito.forEach((producto, index) => {
+
+    total += producto.precio;
+
+    lista.innerHTML += `
+      <div class="producto-carrito">
+        🧢 ${producto.nombre} - $${producto.precio}
+        <button onclick="eliminar(${index})">
+          ❌
+        </button>
+      </div>
+    `;
+
+  });
+
+
+  document.getElementById("contador").innerHTML = carrito.length;
+
+  document.getElementById("total").innerHTML = total;
+
+}
+
+
+
+function eliminar(index) {
+
+  carrito.splice(index, 1);
+
+  mostrarCarrito();
+
+}
+
+
+
+function whatsapp() {
+
+  if (carrito.length === 0) {
+
+    alert("Tu carrito está vacío");
+
+    return;
+
+  }
+
+
+  let mensaje = "Hola DELOERA CAPS, quiero hacer este pedido:%0A%0A";
+
+
+  carrito.forEach((producto) => {
+
+    mensaje += 
+    "🧢 " + producto.nombre +
+    " - $" + producto.precio +
+    "%0A";
+
+  });
+
+
+  mensaje += 
+  "%0A💰 Total: $" +
+  document.getElementById("total").innerHTML;
+
+
+  window.open(
+    "https://wa.me/528281014970?text=" + mensaje
+  );
+
+}
+function comprarWhatsApp(nombre, precio){
+
+  let mensaje =
+  "Hola DELOERA CAPS, quiero comprar:%0A%0A" +
+  "🧢 " + nombre +
+  "%0A💰 Precio: $" + precio;
+
+  window.open(
+    "https://wa.me/528281014970?text=" + mensaje
+  );
+
+}
+function irInicio(){
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
